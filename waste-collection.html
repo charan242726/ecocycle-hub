@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Collection Management - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-products.html" class="nav-link">My Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="waste-collection.html" class="nav-link active">Waste Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-profile.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Waste Collection Management -->
+    <section class="waste-management">
+        <div class="container">
+            <div class="page-header">
+                <h2><i class="fas fa-recycle"></i> Waste Collection Management</h2>
+                <p>Manage your waste collection services and handle customer requests efficiently.</p>
+            </div>
+
+            <!-- Collection Service Setup -->
+            <div class="service-setup">
+                <h3>Collection Service Configuration</h3>
+                <form id="wasteServiceForm" class="service-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceName">Service Name</label>
+                            <input type="text" id="serviceName" class="form-control" placeholder="e.g., Household Waste Collection" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select id="serviceType" class="form-control" required>
+                                <option value="">Select Service Type</option>
+                                <option value="household">Household Waste</option>
+                                <option value="commercial">Commercial Waste</option>
+                                <option value="industrial">Industrial Waste</option>
+                                <option value="electronic">Electronic Waste</option>
+                                <option value="organic">Organic Waste</option>
+                                <option value="mixed">Mixed Recyclables</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Waste Types Accepted (Select all that apply)</label>
+                        <div class="waste-types-grid">
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="paper">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">📄</div>
+                                    <span>Paper & Cardboard</span>
+                                </div>
+                            </label>
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="plastic">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">🍶</div>
+                                    <span>Plastic</span>
+                                </div>
+                            </label>
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="glass">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">🥃</div>
+                                    <span>Glass</span>
+                                </div>
+                            </label>
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="metal">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">🥫</div>
+                                    <span>Metal</span>
+                                </div>
+                            </label>
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="electronics">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">📱</div>
+                                    <span>Electronics</span>
+                                </div>
+                            </label>
+                            <label class="waste-type-option">
+                                <input type="checkbox" value="organic">
+                                <div class="waste-type-content">
+                                    <div class="waste-type-icon">🍎</div>
+                                    <span>Organic</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="serviceArea">Service Area</label>
+                            <input type="text" id="serviceArea" class="form-control" placeholder="Enter cities/areas you serve" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="collectionFee">Collection Fee (per kg)</label>
+                            <input type="number" id="collectionFee" class="form-control" placeholder="Enter fee in ₹" min="0" step="0.50">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="minQuantity">Minimum Quantity (kg)</label>
+                            <input type="number" id="minQuantity" class="form-control" placeholder="Minimum waste quantity" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxQuantity">Maximum Quantity (kg)</label>
+                            <input type="number" id="maxQuantity" class="form-control" placeholder="Maximum waste quantity" min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availableDays">Available Days</label>
+                        <div class="days-selection">
+                            <label class="day-option">
+                                <input type="checkbox" value="monday">
+                                <span>Mon</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="tuesday">
+                                <span>Tue</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="wednesday">
+                                <span>Wed</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="thursday">
+                                <span>Thu</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="friday">
+                                <span>Fri</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="saturday">
+                                <span>Sat</span>
+                            </label>
+                            <label class="day-option">
+                                <input type="checkbox" value="sunday">
+                                <span>Sun</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startTime">Available From</label>
+                            <input type="time" id="startTime" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endTime">Available Until</label>
+                            <input type="time" id="endTime" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceDescription">Service Description</label>
+                        <textarea id="serviceDescription" class="form-control" placeholder="Describe your waste collection service, special requirements, etc." rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-save"></i> Save Collection Service
+                    </button>
+                </form>
+            </div>
+
+            <!-- Active Collection Requests -->
+            <div class="collection-requests">
+                <div class="requests-header">
+                    <h3>Collection Requests</h3>
+                    <div class="request-filters">
+                        <select id="statusFilter" class="form-control">
+                            <option value="all">All Requests</option>
+                            <option value="pending">Pending</option>
+                            <option value="accepted">Accepted</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <select id="dateFilter" class="form-control">
+                            <option value="all">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="requestsList" class="requests-list">
+                    <!-- Sample request for demonstration -->
+                    <div class="request-card">
+                        <div class="request-header">
+                            <div class="request-id">#WC001</div>
+                            <div class="request-status status-pending">Pending</div>
+                        </div>
+                        <div class="request-details">
+                            <div class="customer-info">
+                                <h4><i class="fas fa-user"></i> John Doe</h4>
+                                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                                <p><i class="fas fa-map-marker-alt"></i> 123 Green Street, Mumbai, 400001</p>
+                            </div>
+                            <div class="waste-info">
+                                <div class="waste-types">
+                                    <span class="waste-tag">📄 Paper</span>
+                                    <span class="waste-tag">🍶 Plastic</span>
+                                    <span class="waste-tag">🥫 Metal</span>
+                                </div>
+                                <div class="waste-quantity">
+                                    <strong>Estimated: 15kg</strong>
+                                </div>
+                                <div class="preferred-time">
+                                    <i class="fas fa-clock"></i> Preferred: Tomorrow, 10:00 AM - 2:00 PM
+                                </div>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary" onclick="acceptRequest('WC001')">
+                                <i class="fas fa-check"></i> Accept
+                            </button>
+                            <button class="btn btn-secondary" onclick="viewRequestDetails('WC001')">
+                                <i class="fas fa-eye"></i> View Details
+                            </button>
+                            <button class="btn btn-danger" onclick="rejectRequest('WC001')">
+                                <i class="fas fa-times"></i> Reject
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="no-requests" style="display: none;">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h4>No collection requests</h4>
+                        <p>New waste collection requests will appear here.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collection History -->
+            <div class="collection-history">
+                <h3>Collection History</h3>
+                <div class="history-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCollections">0</div>
+                        <div class="stat-label">Total Collections</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalWasteCollected">0kg</div>
+                        <div class="stat-label">Waste Collected</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalEarnings">₹0</div>
+                        <div class="stat-label">Total Earnings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="avgRating">0.0</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="waste-collection.js"></script>
+</body>
+</html>

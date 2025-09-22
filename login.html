@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="recycling.html" class="nav-link">Recycling</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.html" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Eco Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="impact.html" class="nav-link">Our Impact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2>Welcome Back!</h2>
+                    <p>Sign in to your Real World account</p>
+                </div>
+                
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="buyer">🛒 Buyer Login</button>
+                    <button class="tab-btn" data-tab="seller">🏪 Seller Login</button>
+                </div>
+
+                <!-- Buyer Login Form -->
+                <div class="tab-content active" id="buyer-tab">
+                    <form id="buyerLoginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="buyerEmail">Email Address</label>
+                            <input type="email" id="buyerEmail" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="buyerPassword">Password</label>
+                            <input type="password" id="buyerPassword" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-sign-in-alt"></i> Sign In as Buyer
+                        </button>
+                        
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Seller Login Form -->
+                <div class="tab-content" id="seller-tab">
+                    <form id="sellerLoginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="sellerEmail">Business Email</label>
+                            <input type="email" id="sellerEmail" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sellerPassword">Password</label>
+                            <input type="password" id="sellerPassword" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberSeller">
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-store"></i> Sign In as Seller
+                        </button>
+                        
+                        <div class="auth-footer">
+                            <p>Want to sell waste products? <a href="seller-signup.html">Register as Seller</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-globe-americas"></i> Real World
+                    </div>
+                    <p class="footer-about">Making sustainable living accessible and impactful for everyone.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="recycling.html">Recycling Guide</a></li>
+                        <li><a href="products.html">Eco Products</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> contact@realworld.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <!-- Added navigation script for consistent menu functionality -->
+    <script src="navigation.js"></script>
+</body>
+</html>

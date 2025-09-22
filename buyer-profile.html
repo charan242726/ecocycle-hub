@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i> Cart (<span id="cartCount">0</span>)
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="buyer-profile.html" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                    <h2 id="userName">Loading...</h2>
+                    <p id="userEmail">Loading...</p>
+                    <p class="member-since">Member since <span id="memberSince">Loading...</span></p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="totalOrders">0</div>
+                        <div class="stat-label">Orders</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="totalSaved">₹0</div>
+                        <div class="stat-label">Saved</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" id="ecoPoints">0</div>
+                        <div class="stat-label">Eco Points</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="orders">My Orders</button>
+                <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview-tab">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3><i class="fas fa-shopping-bag"></i> Recent Orders</h3>
+                        <div id="recentOrders">
+                            <p class="no-data">No orders yet. <a href="products.html">Start shopping!</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-heart"></i> Wishlist Items</h3>
+                        <div id="wishlistPreview">
+                            <p class="no-data">Your wishlist is empty.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-leaf"></i> Environmental Impact</h3>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <span class="metric-value" id="co2Saved">0kg</span>
+                                <span class="metric-label">CO₂ Saved</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value" id="wasteReduced">0kg</span>
+                                <span class="metric-label">Waste Reduced</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-gift"></i> Rewards & Points</h3>
+                        <div class="rewards-info">
+                            <p>You have <strong id="currentPoints">0</strong> Eco Points</p>
+                            <p class="points-info">Earn points with every eco-friendly purchase!</p>
+                            <button class="btn btn-primary btn-small">Redeem Points</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="tab-content" id="orders-tab">
+                <div class="orders-header">
+                    <h3>Order History</h3>
+                    <div class="order-filters">
+                        <select id="orderFilter" class="form-control">
+                            <option value="all">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="ordersList">
+                    <div class="no-orders">
+                        <i class="fas fa-box-open"></i>
+                        <h4>No orders yet</h4>
+                        <p>Start shopping for eco-friendly products to see your orders here.</p>
+                        <a href="products.html" class="btn btn-primary">Browse Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wishlist Tab -->
+            <div class="tab-content" id="wishlist-tab">
+                <div class="wishlist-header">
+                    <h3>My Wishlist</h3>
+                    <button id="clearWishlist" class="btn btn-secondary">Clear All</button>
+                </div>
+                <div id="wishlistItems">
+                    <div class="no-wishlist">
+                        <i class="fas fa-heart"></i>
+                        <h4>Your wishlist is empty</h4>
+                        <p>Save products you love to buy them later.</p>
+                        <a href="products.html" class="btn btn-primary">Browse Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="settings-sections">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        <form id="profileUpdateForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="updateFirstName">First Name</label>
+                                    <input type="text" id="updateFirstName" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateLastName">Last Name</label>
+                                    <input type="text" id="updateLastName" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="updatePhone">Phone Number</label>
+                                <input type="tel" id="updatePhone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="updateAddress">Address</label>
+                                <textarea id="updateAddress" class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Notifications</h3>
+                        <div class="notification-settings">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                Email notifications for orders
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="promotionalEmails" checked>
+                                Promotional emails and offers
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="ecoTips">
+                                Weekly eco-tips and sustainability news
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Save Preferences</button>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-lock"></i> Security</h3>
+                        <form id="passwordChangeForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Confirm New Password</label>
+                                <input type="password" id="confirmNewPassword" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

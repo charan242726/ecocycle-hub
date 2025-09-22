@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-products.html" class="nav-link">My Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="waste-collection.html" class="nav-link">Waste Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-profile.html" class="nav-link active">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seller Dashboard -->
+    <section class="seller-dashboard">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="seller-info">
+                    <div class="seller-avatar">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="seller-details">
+                        <h2 id="businessName">Loading...</h2>
+                        <p id="businessType">Loading...</p>
+                        <div class="verification-status" id="verificationStatus">
+                            <i class="fas fa-clock"></i> Verification Pending
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalProducts">0</div>
+                        <div class="stat-label">Products</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalOrders">0</div>
+                        <div class="stat-label">Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalRevenue">₹0</div>
+                        <div class="stat-label">Revenue</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="wasteCollected">0kg</div>
+                        <div class="stat-label">Waste Collected</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="products">Products</button>
+                <button class="tab-btn" data-tab="orders">Orders</button>
+                <button class="tab-btn" data-tab="waste">Waste Management</button>
+                <button class="tab-btn" data-tab="analytics">Analytics</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview-tab">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3><i class="fas fa-chart-line"></i> Recent Activity</h3>
+                        <div id="recentActivity">
+                            <div class="activity-item">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Welcome to Real World! Complete your profile to start selling.</span>
+                                <small>Just now</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3><i class="fas fa-shopping-cart"></i> Recent Orders</h3>
+                        <div id="recentOrders">
+                            <p class="no-data">No orders yet. Add products to start receiving orders!</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3><i class="fas fa-recycle"></i> Waste Collection Requests</h3>
+                        <div id="wasteRequests">
+                            <p class="no-data">No waste collection requests yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3><i class="fas fa-leaf"></i> Environmental Impact</h3>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <span class="metric-value" id="co2Prevented">0kg</span>
+                                <span class="metric-label">CO₂ Prevented</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value" id="materialsRecycled">0kg</span>
+                                <span class="metric-label">Materials Recycled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="add-product.html" class="action-btn">
+                            <i class="fas fa-plus"></i>
+                            <span>Add New Product</span>
+                        </a>
+                        <a href="waste-collection.html" class="action-btn">
+                            <i class="fas fa-truck"></i>
+                            <span>Manage Waste Collection</span>
+                        </a>
+                        <button class="action-btn" onclick="viewAnalytics()">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>View Analytics</span>
+                        </button>
+                        <button class="action-btn" onclick="updateProfile()">
+                            <i class="fas fa-cog"></i>
+                            <span>Update Profile</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Tab -->
+            <div class="tab-content" id="products-tab">
+                <div class="products-header">
+                    <h3>My Products</h3>
+                    <a href="add-product.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add New Product
+                    </a>
+                </div>
+                <div class="products-filters">
+                    <select id="productStatusFilter" class="form-control">
+                        <option value="all">All Products</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="pending">Pending Approval</option>
+                    </select>
+                </div>
+                <div id="sellerProductsList">
+                    <div class="no-products">
+                        <i class="fas fa-box-open"></i>
+                        <h4>No products yet</h4>
+                        <p>Start by adding your first eco-friendly product or recycled material.</p>
+                        <a href="add-product.html" class="btn btn-primary">Add Your First Product</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="tab-content" id="orders-tab">
+                <div class="orders-header">
+                    <h3>Order Management</h3>
+                    <div class="order-filters">
+                        <select id="orderStatusFilter" class="form-control">
+                            <option value="all">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="sellerOrdersList">
+                    <div class="no-orders">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h4>No orders yet</h4>
+                        <p>Orders from customers will appear here once you have active products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waste Management Tab -->
+            <div class="tab-content" id="waste-tab">
+                <div class="waste-header">
+                    <h3>Waste Collection Management</h3>
+                    <a href="waste-collection.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Collection Service
+                    </a>
+                </div>
+                
+                <div class="waste-services">
+                    <h4>Your Collection Services</h4>
+                    <div id="wasteServicesList">
+                        <div class="service-card">
+                            <div class="service-icon">♻</div>
+                            <div class="service-details">
+                                <h5>General Waste Collection</h5>
+                                <p>Collect mixed recyclable materials from households and businesses</p>
+                                <div class="service-coverage">Coverage: <span id="serviceCoverage">Not set</span></div>
+                            </div>
+                            <div class="service-status">
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-requests">
+                    <h4>Collection Requests</h4>
+                    <div class="request-filters">
+                        <select id="requestStatusFilter" class="form-control">
+                            <option value="all">All Requests</option>
+                            <option value="pending">Pending</option>
+                            <option value="scheduled">Scheduled</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div id="collectionRequestsList">
+                        <div class="no-requests">
+                            <i class="fas fa-truck"></i>
+                            <h4>No collection requests</h4>
+                            <p>Waste collection requests from customers will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div class="tab-content" id="analytics-tab">
+                <div class="analytics-header">
+                    <h3>Business Analytics</h3>
+                    <div class="date-range">
+                        <select id="analyticsRange" class="form-control">
+                            <option value="7">Last 7 days</option>
+                            <option value="30">Last 30 days</option>
+                            <option value="90">Last 3 months</option>
+                            <option value="365">Last year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h4>Sales Performance</h4>
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Sales chart will be displayed here</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h4>Top Products</h4>
+                        <div id="topProducts">
+                            <p class="no-data">No sales data available yet.</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h4>Waste Collection Stats</h4>
+                        <div class="waste-stats">
+                            <div class="stat-row">
+                                <span>Total Collections:</span>
+                                <span id="totalCollections">0</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Materials Processed:</span>
+                                <span id="materialsProcessed">0kg</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Revenue from Waste:</span>
+                                <span id="wasteRevenue">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h4>Customer Insights</h4>
+                        <div class="customer-insights">
+                            <div class="insight-row">
+                                <span>Total Customers:</span>
+                                <span id="totalCustomers">0</span>
+                            </div>
+                            <div class="insight-row">
+                                <span>Repeat Customers:</span>
+                                <span id="repeatCustomers">0</span>
+                            </div>
+                            <div class="insight-row">
+                                <span>Average Order Value:</span>
+                                <span id="avgOrderValue">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="settings-sections">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-building"></i> Business Information</h3>
+                        <form id="businessUpdateForm">
+                            <div class="form-group">
+                                <label for="updateBusinessName">Business Name</label>
+                                <input type="text" id="updateBusinessName" class="form-control">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="updateBusinessType">Business Type</label>
+                                    <select id="updateBusinessType" class="form-control">
+                                        <option value="recycling">Recycling Company</option>
+                                        <option value="manufacturer">Eco Product Manufacturer</option>
+                                        <option value="retailer">Eco Retailer</option>
+                                        <option value="individual">Individual Seller</option>
+                                        <option value="cooperative">Waste Cooperative</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateRegistration">Registration Number</label>
+                                    <input type="text" id="updateRegistration" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="updateDescription">Business Description</label>
+                                <textarea id="updateDescription" class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Business Info</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Service Areas</h3>
+                        <div class="service-areas">
+                            <div class="area-input">
+                                <input type="text" id="newServiceArea" placeholder="Enter city or area" class="form-control">
+                                <button id="addServiceArea" class="btn btn-secondary">Add Area</button>
+                            </div>
+                            <div id="serviceAreasList">
+                                <div class="no-areas">
+                                    <p>No service areas added yet. Add areas where you provide services.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Notifications</h3>
+                        <div class="notification-settings">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="orderNotifications" checked>
+                                Email notifications for new orders
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="wasteNotifications" checked>
+                                Notifications for waste collection requests
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketingEmails">
+                                Marketing emails and seller tips
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Save Preferences</button>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3><i class="fas fa-credit-card"></i> Payment Settings</h3>
+                        <div class="payment-info">
+                            <p>Set up your payment details to receive payments from sales and waste collection services.</p>
+                            <div class="form-group">
+                                <label for="bankAccount">Bank Account Number</label>
+                                <input type="text" id="bankAccount" class="form-control" placeholder="Enter account number">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ifscCode">IFSC Code</label>
+                                    <input type="text" id="ifscCode" class="form-control" placeholder="Enter IFSC code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="accountHolder">Account Holder Name</label>
+                                    <input type="text" id="accountHolder" class="form-control" placeholder="Enter account holder name">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">Update Payment Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="seller-profile.js"></script>
+</body>
+</html>

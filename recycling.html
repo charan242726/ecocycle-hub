@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Guide - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="recycling.html" class="nav-link active">Recycling</a>
+                </li>
+                <li class="nav-item">
+                    <a href="register.html" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link">Eco Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="impact.html" class="nav-link">Our Impact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link btn btn-primary">Login</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Recycling Guide</h1>
+            <p>Learn how to recycle different materials properly and make a positive impact on the environment</p>
+        </div>
+    </section>
+
+    <!-- Recycling Categories -->
+    <section class="recycling-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Can You Recycle?</h2>
+                <p>Click on each category to learn proper recycling methods</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" onclick="showRecyclingInfo('plastic')">
+                    <div class="category-icon">🥤</div>
+                    <h3>Plastic</h3>
+                    <p>Bottles, containers, bags</p>
+                </div>
+                <div class="category-card" onclick="showRecyclingInfo('paper')">
+                    <div class="category-icon">📄</div>
+                    <h3>Paper</h3>
+                    <p>Newspapers, cardboard, books</p>
+                </div>
+                <div class="category-card" onclick="showRecyclingInfo('glass')">
+                    <div class="category-icon">🍾</div>
+                    <h3>Glass</h3>
+                    <p>Bottles, jars, containers</p>
+                </div>
+                <div class="category-card" onclick="showRecyclingInfo('metal')">
+                    <div class="category-icon">🥫</div>
+                    <h3>Metal</h3>
+                    <p>Cans, foil, appliances</p>
+                </div>
+                <div class="category-card" onclick="showRecyclingInfo('electronic')">
+                    <div class="category-icon">📱</div>
+                    <h3>Electronics</h3>
+                    <p>Phones, computers, batteries</p>
+                </div>
+                <div class="category-card" onclick="showRecyclingInfo('organic')">
+                    <div class="category-icon">🍎</div>
+                    <h3>Organic</h3>
+                    <p>Food waste, garden waste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recycling Info Modal -->
+    <div id="recyclingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="recyclingInfo"></div>
+        </div>
+    </div>
+
+    <!-- Recycling Tips -->
+    <section class="recycling-tips">
+        <div class="container">
+            <h2>Recycling Tips</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-wash"></i>
+                    <h3>Clean Before Recycling</h3>
+                    <p>Rinse containers to remove food residue and contaminants</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-sort"></i>
+                    <h3>Sort Materials</h3>
+                    <p>Separate different types of materials for proper processing</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Check Local Guidelines</h3>
+                    <p>Follow your local recycling center's specific requirements</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Reduce & Reuse First</h3>
+                    <p>Try to reduce consumption and reuse items before recycling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Pickup -->
+    <section class="schedule-pickup">
+        <div class="container">
+            <div class="pickup-card">
+                <h2>Schedule Waste Pickup</h2>
+                <p>Ready to recycle? Schedule a pickup from our certified collectors</p>
+                <a href="waste-collection.html" class="btn btn-primary">Schedule Pickup</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-globe-americas"></i> Real World
+                    </div>
+                    <p class="footer-about">Making sustainable living accessible and impactful for everyone.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="recycling.html">Recycling Guide</a></li>
+                        <li><a href="products.html">Eco Products</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="recycling.js"></script>
+    <!-- Added navigation script for consistent menu functionality -->
+    <script src="navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-products.html" class="nav-link">My Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="waste-collection.html" class="nav-link">Waste Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-profile.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add Product Section -->
+    <section class="add-product-section">
+        <div class="container">
+            <div class="page-header">
+                <h2><i class="fas fa-plus-circle"></i> Add New Product</h2>
+                <p>List your eco-friendly products or recycled materials on our marketplace.</p>
+            </div>
+
+            <form id="addProductForm" class="product-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Basic Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="productName">Product Name *</label>
+                        <input type="text" id="productName" class="form-control" placeholder="Enter product name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCategory">Category *</label>
+                            <select id="productCategory" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="bottles">Reusable Bottles</option>
+                                <option value="bags">Eco Bags</option>
+                                <option value="cleaners">Natural Cleaners</option>
+                                <option value="lighting">LED Lighting</option>
+                                <option value="kitchen">Kitchen Items</option>
+                                <option value="personal-care">Personal Care</option>
+                                <option value="recycled-materials">Recycled Materials</option>
+                                <option value="upcycled-items">Upcycled Items</option>
+                                <option value="organic-products">Organic Products</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCondition">Condition</label>
+                            <select id="productCondition" class="form-control">
+                                <option value="new">New</option>
+                                <option value="like-new">Like New</option>
+                                <option value="good">Good</option>
+                                <option value="recycled">Recycled/Refurbished</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productDescription">Description *</label>
+                        <textarea id="productDescription" class="form-control" rows="4" placeholder="Describe your product, its eco-friendly features, materials used, etc." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productIcon">Product Icon</label>
+                        <div class="icon-selection">
+                            <div class="icon-grid">
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🥤">
+                                    <span class="icon-display">🥤</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🛍">
+                                    <span class="icon-display">🛍</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🧴">
+                                    <span class="icon-display">🧴</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="💡">
+                                    <span class="icon-display">💡</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🍽">
+                                    <span class="icon-display">🍽</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🧽">
+                                    <span class="icon-display">🧽</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="♻">
+                                    <span class="icon-display">♻</span>
+                                </label>
+                                <label class="icon-option">
+                                    <input type="radio" name="productIcon" value="🌱">
+                                    <span class="icon-display">🌱</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Inventory -->
+                <div class="form-section">
+                    <h3><i class="fas fa-rupee-sign"></i> Pricing & Inventory</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Price (₹) *</label>
+                            <input type="number" id="productPrice" class="form-control" placeholder="Enter price" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comparePrice">Compare at Price (₹)</label>
+                            <input type="number" id="comparePrice" class="form-control" placeholder="Original price (optional)" min="0" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stockQuantity">Stock Quantity *</label>
+                            <input type="number" id="stockQuantity" class="form-control" placeholder="Available quantity" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stockUnit">Unit</label>
+                            <select id="stockUnit" class="form-control">
+                                <option value="pieces">Pieces</option>
+                                <option value="kg">Kilograms</option>
+                                <option value="liters">Liters</option>
+                                <option value="meters">Meters</option>
+                                <option value="sets">Sets</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="trackInventory">
+                            Track inventory (automatically reduce stock when sold)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Environmental Impact -->
+                <div class="form-section">
+                    <h3><i class="fas fa-leaf"></i> Environmental Impact</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="co2Saving">CO₂ Saving per unit (kg)</label>
+                            <input type="number" id="co2Saving" class="form-control" placeholder="e.g., 2.5" min="0" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="materialsUsed">Recycled Materials (%)</label>
+                            <input type="number" id="materialsUsed" class="form-control" placeholder="e.g., 80" min="0" max="100">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Eco Certifications</label>
+                        <div class="certification-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="organic">
+                                Organic Certified
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="recycled">
+                                Made from Recycled Materials
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="biodegradable">
+                                Biodegradable
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="fair-trade">
+                                Fair Trade
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="carbon-neutral">
+                                Carbon Neutral
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sustainabilityStory">Sustainability Story</label>
+                        <textarea id="sustainabilityStory" class="form-control" rows="3" placeholder="Tell customers about the environmental benefits and sustainable practices behind this product..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Shipping & Handling -->
+                <div class="form-section">
+                    <h3><i class="fas fa-shipping-fast"></i> Shipping & Handling</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" class="form-control" placeholder="Product weight" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="shippingCost">Shipping Cost (₹)</label>
+                            <input type="number" id="shippingCost" class="form-control" placeholder="Shipping cost" min="0" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="processingTime">Processing Time</label>
+                        <select id="processingTime" class="form-control">
+                            <option value="1-2">1-2 business days</option>
+                            <option value="3-5">3-5 business days</option>
+                            <option value="1-2-weeks">1-2 weeks</option>
+                            <option value="custom">Custom (specify in notes)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="freeShipping">
+                            Offer free shipping
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h3><i class="fas fa-cog"></i> Additional Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="tags">Tags (comma-separated)</label>
+                        <input type="text" id="tags" class="form-control" placeholder="e.g., eco-friendly, sustainable, recycled, organic">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions</label>
+                        <textarea id="specialInstructions" class="form-control" rows="2" placeholder="Any special handling, care instructions, or notes for customers..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="featuredProduct">
+                            Mark as featured product (additional visibility)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="saveDraft()">
+                        <i class="fas fa-save"></i> Save as Draft
+                    </button>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-plus-circle"></i> Add Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="add-product.js"></script>
+</body>
+</html>

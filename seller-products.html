@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products - Real World</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-products.html" class="nav-link active">My Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="waste-collection.html" class="nav-link">Waste Collection</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seller-profile.html" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <button onclick="logout()" class="btn btn-secondary">Logout</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Management Section -->
+    <section class="products-management">
+        <div class="container">
+            <div class="page-header">
+                <div class="header-content">
+                    <h2><i class="fas fa-boxes"></i> My Products</h2>
+                    <p>Manage your product listings and inventory.</p>
+                </div>
+                <a href="add-product.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Add New Product
+                </a>
+            </div>
+
+            <!-- Product Stats -->
+            <div class="product-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProducts">0</div>
+                    <div class="stat-label">Total Products</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="activeProducts">0</div>
+                    <div class="stat-label">Active</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="draftProducts">0</div>
+                    <div class="stat-label">Drafts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="lowStockProducts">0</div>
+                    <div class="stat-label">Low Stock</div>
+                </div>
+            </div>
+
+            <!-- Filters and Search -->
+            <div class="products-controls">
+                <div class="search-bar">
+                    <input type="text" id="productSearch" placeholder="Search products..." class="form-control">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-controls">
+                    <select id="statusFilter" class="form-control">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="draft">Draft</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                    <select id="categoryFilter" class="form-control">
+                        <option value="all">All Categories</option>
+                        <option value="bottles">Reusable Bottles</option>
+                        <option value="bags">Eco Bags</option>
+                        <option value="cleaners">Natural Cleaners</option>
+                        <option value="lighting">LED Lighting</option>
+                        <option value="kitchen">Kitchen Items</option>
+                        <option value="personal-care">Personal Care</option>
+                        <option value="recycled-materials">Recycled Materials</option>
+                    </select>
+                    <select id="sortBy" class="form-control">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="price-high">Price High-Low</option>
+                        <option value="price-low">Price Low-High</option>
+                        <option value="stock">Stock Level</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products List -->
+            <div class="products-list" id="productsList">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyProducts" class="empty-products" style="display: none;">
+                <i class="fas fa-box-open"></i>
+                <h3>No products yet</h3>
+                <p>Start by adding your first eco-friendly product or recycled material.</p>
+                <a href="add-product.html" class="btn btn-primary">Add Your First Product</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="seller-products.js"></script>
+</body>
+</html>

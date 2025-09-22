@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real World - Eco-Friendly Living</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe-americas"></i>
+                <span>Real World</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <!-- Updated to link to separate home page -->
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Updated to link to separate recycling page -->
+                    <a href="recycling.html" class="nav-link">Recycling</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Updated to link to separate register page -->
+                    <a href="register.html" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Updated to link to separate products page -->
+                    <a href="products.html" class="nav-link">Eco Products</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Updated to link to separate impact page -->
+                    <a href="impact.html" class="nav-link">Our Impact</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Updated to link to separate contact page -->
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Added login link -->
+                    <a href="login.html" class="nav-link btn btn-primary">Login</a>
+                </li>
+                <li class="nav-item">
+                    <button id="shareBtn" class="btn btn-share">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-pop-in">Save Our <span class="highlight">Planet</span></h1>
+            <p class="hero-subtitle animate-fade-in">Join the movement towards sustainable living. Discover eco-friendly products and learn how to recycle waste effectively for a better tomorrow.</p>
+            <div class="hero-buttons animate-slide-up">
+                <!-- Updated hero buttons to link to separate pages -->
+                <a href="recycling.html" class="btn btn-primary">Start Recycling</a>
+                <a href="products.html" class="btn btn-secondary">Shop Eco Products</a>
+            </div>
+            <button id="shareBtn2" class="btn btn-share-large animate-bounce">
+                <i class="fas fa-share-alt"></i> Share This Website
+            </button>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Recycling Guide Section -->
+    <section id="recycling" class="recycling">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">♻ Recycling Made Simple</h2>
+                <p class="section-subtitle">Learn how to properly sort and recycle different types of waste to make a real impact on our environment.</p>
+            </div>
+            
+            <div class="recycling-grid">
+                <div class="recycling-card card-blue animate-float">
+                    <div class="card-icon">🗞</div>
+                    <h3 class="card-title">Paper & Cardboard</h3>
+                    <ul class="card-list">
+                        <li>Newspapers and magazines</li>
+                        <li>Cardboard boxes (flattened)</li>
+                        <li>Office paper and documents</li>
+                        <li>Paper bags and packaging</li>
+                    </ul>
+                    <button class="btn btn-card" data-tip="paper">Learn More</button>
+                </div>
+                
+                <div class="recycling-card card-green animate-float-delay">
+                    <div class="card-icon">🍶</div>
+                    <h3 class="card-title">Glass & Plastic</h3>
+                    <ul class="card-list">
+                        <li>Glass bottles and jars</li>
+                        <li>Plastic bottles (1-7)</li>
+                        <li>Food containers</li>
+                        <li>Beverage containers</li>
+                    </ul>
+                    <button class="btn btn-card" data-tip="plastic">Learn More</button>
+                </div>
+                
+                <div class="recycling-card card-yellow animate-float-delay-2">
+                    <div class="card-icon">🔋</div>
+                    <h3 class="card-title">Electronics & Metal</h3>
+                    <ul class="card-list">
+                        <li>Aluminum cans</li>
+                        <li>Steel containers</li>
+                        <li>Old electronics</li>
+                        <li>Batteries (special disposal)</li>
+                    </ul>
+                    <button class="btn btn-card" data-tip="electronics">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recycling Registration Section -->
+    <section id="register" class="registration">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">🚛 Register for Waste Collection</h2>
+                <p class="section-subtitle">Schedule a pickup for your recyclable waste. Our certified collectors will come to your doorstep!</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step animate-fade-in-up">
+                    <div class="step-number step-blue">1</div>
+                    <h3 class="step-title">📝 Provide Your Details</h3>
+                    <p class="step-desc">Fill out the registration form with your contact information, address, and type of waste you want to recycle.</p>
+                </div>
+                
+                <div class="step animate-fade-in-up-delay">
+                    <div class="step-number step-green">2</div>
+                    <h3 class="step-title">📧 Get Collector Info</h3>
+                    <p class="step-desc">You'll receive an email with your assigned collector's details, pickup schedule, and preparation instructions.</p>
+                </div>
+                
+                <div class="step animate-fade-in-up-delay-2">
+                    <div class="step-number step-purple">3</div>
+                    <h3 class="step-title">♻ Schedule Pickup</h3>
+                    <p class="step-desc">Click register to complete your registration and get your first pickup scheduled within 2-3 business days.</p>
+                </div>
+            </div>
+            
+            <div class="registration-form animate-fade-in">
+                <h3 class="form-title">Register for Waste Collection</h3>
+                <form id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Collection Time</label>
+                            <select id="time" class="form-control">
+                                <option>Morning (8 AM - 12 PM)</option>
+                                <option>Afternoon (12 PM - 4 PM)</option>
+                                <option>Evening (4 PM - 7 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Complete Address *</label>
+                        <textarea id="address" class="form-control" placeholder="House/Flat No., Street, Area, City, State, PIN Code" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Type of Waste (Select all that apply) *</label>
+                        <div class="waste-types">
+                            <label class="waste-type">
+                                <input type="checkbox" value="food">
+                                <div class="waste-content">
+                                    <div class="waste-icon">🍎</div>
+                                    <div>
+                                        <h4>Food Waste</h4>
+                                        <p>Organic kitchen waste, peels, leftovers</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="waste-type">
+                                <input type="checkbox" value="plastic">
+                                <div class="waste-content">
+                                    <div class="waste-icon">🍶</div>
+                                    <div>
+                                        <h4>Plastic Waste</h4>
+                                        <p>Bottles, containers, packaging</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="waste-type">
+                                <input type="checkbox" value="clothes">
+                                <div class="waste-content">
+                                    <div class="waste-icon">👕</div>
+                                    <div>
+                                        <h4>Clothes & Textiles</h4>
+                                        <p>Old clothes, fabric, shoes</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="waste-type">
+                                <input type="checkbox" value="paper">
+                                <div class="waste-content">
+                                    <div class="waste-icon">📄</div>
+                                    <div>
+                                        <h4>Paper & Cardboard</h4>
+                                        <p>Newspapers, boxes, documents</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="waste-type">
+                                <input type="checkbox" value="electronics">
+                                <div class="waste-content">
+                                    <div class="waste-icon">📱</div>
+                                    <div>
+                                        <h4>Electronics</h4>
+                                        <p>Phones, batteries, appliances</p>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="waste-type">
+                                <input type="checkbox" value="other">
+                                <div class="waste-content">
+                                    <div class="waste-icon">📦</div>
+                                    <div>
+                                        <h4>Other Materials</h4>
+                                        <p>Glass, metal, mixed waste</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Estimated Quantity</label>
+                        <select id="quantity" class="form-control">
+                            <option>Small (1-2 bags)</option>
+                            <option>Medium (3-5 bags)</option>
+                            <option>Large (6-10 bags)</option>
+                            <option>Bulk (More than 10 bags)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" class="form-control" placeholder="Any special instructions or additional information..."></textarea>
+                    </div>
+                    
+                    <div class="form-terms">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-truck"></i> Register for Collection
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eco Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">🌱 Eco-Friendly Products</h2>
+                <p class="section-subtitle">Discover sustainable alternatives that help reduce your environmental footprint while maintaining quality and style.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card animate-fade-in-up">
+                    <div class="product-icon">🥤</div>
+                    <h3 class="product-title">Reusable Bottles</h3>
+                    <p class="product-desc">Stainless steel and glass bottles that keep drinks fresh and reduce plastic waste.</p>
+                    <div class="product-price">From ₹899</div>
+                    <button class="btn btn-product">Add to Cart</button>
+                </div>
+                
+                <div class="product-card animate-fade-in-up-delay">
+                    <div class="product-icon">🛍</div>
+                    <h3 class="product-title">Eco Shopping Bags</h3>
+                    <p class="product-desc">Durable canvas and jute bags perfect for grocery shopping and daily use.</p>
+                    <div class="product-price">From ₹399</div>
+                    <button class="btn btn-product">Add to Cart</button>
+                </div>
+                
+                <div class="product-card animate-fade-in-up-delay-2">
+                    <div class="product-icon">🧴</div>
+                    <h3 class="product-title">Natural Cleaners</h3>
+                    <p class="product-desc">Plant-based cleaning products that are safe for your family and the environment.</p>
+                    <div class="product-price">From ₹699</div>
+                    <button class="btn btn-product">Add to Cart</button>
+                </div>
+                
+                <div class="product-card animate-fade-in-up-delay-3">
+                    <div class="product-icon">💡</div>
+                    <h3 class="product-title">LED Bulbs</h3>
+                    <p class="product-desc">Energy-efficient lighting that lasts longer and reduces electricity consumption.</p>
+                    <div class="product-price">From ₹299</div>
+                    <button class="btn btn-product">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="products-cta animate-fade-in">
+                <button class="btn btn-primary btn-large">View Full Catalog & Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">🌟 Our Environmental Impact</h2>
+                <p class="section-subtitle">Together, we're making a real difference. See how our community is helping create a more sustainable world.</p>
+            </div>
+            
+            <div class="impact-stats">
+                <div class="stat animate-fade-in-up">
+                    <div class="stat-number" id="wasteCounter">0</div>
+                    <div class="stat-label">Tons of Waste Recycled</div>
+                </div>
+                <div class="stat animate-fade-in-up-delay">
+                    <div class="stat-number" id="co2Counter">0</div>
+                    <div class="stat-label">CO₂ Emissions Saved (kg)</div>
+                </div>
+                <div class="stat animate-fade-in-up-delay-2">
+                    <div class="stat-number" id="treesCounter">0</div>
+                    <div class="stat-label">Trees Saved</div>
+                </div>
+                <div class="stat animate-fade-in-up-delay-3">
+                    <div class="stat-number" id="membersCounter">0</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">📧 Get In Touch</h2>
+                <p class="section-subtitle">Have questions about recycling or want to learn more about our eco-friendly products? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="contact-form animate-fade-in">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" class="form-control">
+                            <option>Recycling Question</option>
+                            <option>Product Inquiry</option>
+                            <option>Partnership Opportunity</option>
+                            <option>General Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </div>
+                </form>
+                
+                <div class="notification">
+                    <strong>Demo Notice:</strong> This is a sample contact form. In a real implementation, this would connect to a backend service to send emails.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-globe-americas"></i> Real World
+                    </div>
+                    <p class="footer-about">Making sustainable living accessible and impactful for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="recycling.html">Recycling Guide</a></li>
+                        <li><a href="products.html">Eco Products</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Sustainability Tips</a></li>
+                        <li><a href="#">Local Recycling Centers</a></li>
+                        <li><a href="#">Environmental News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> contact@realworld.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +91 98765 43210</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mumbai, India</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Real World. All rights reserved. Building a sustainable future together.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Recycling Tips Modal -->
+    <div class="modal" id="recyclingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="tip-content" id="modalContent"></div>
+            <button class="btn btn-primary" id="gotItBtn">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Added navigation script for consistent menu functionality -->
+    <script src="navigation.js"></script>
+</body>
+</html>
