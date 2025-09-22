@@ -2863,6 +2863,109 @@ textarea.form-control {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: slideInRight 0.8s ease-out 0.2s both;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--dark-green));
+  background-size: 200% 100%;
+  animation: gradientMove 3s ease-in-out infinite;
+}
+
+.contact-form h2 {
+  margin-bottom: 30px;
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.contact-form h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-green);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 25px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form .btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.contact-form .btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .faq-section {
@@ -2919,11 +3022,58 @@ textarea.form-control {
     gap: 30px;
   }
   
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+  
+  .contact-form h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-methods {
+    gap: 20px;
+  }
+  
+  .contact-method {
+    padding: 15px;
+  }
+  
   .faq-grid {
     grid-template-columns: 1fr;
   }
   
   .faq-section {
     padding: 40px 20px;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 20px 15px;
+  }
+  
+  .contact-form h2 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .contact-method i {
+    margin: 0 auto;
   }
 }
